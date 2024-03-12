@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignIn and SignUp form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <section>
+        <div class="conatiner">
+            <h1>Minimal login and signup forms</h1>
+            <div class="form">
+
+                <i class="fa-solid fa-right-to-bracket"></i>
+                <h2>Welcome!</h2>
+                <p class="formtext">Sign in to your account</p>
+                <form action="mailto:someone@example.com" method="post">
+
+                    <div class="username">
+                        <label for="name">Name*</label><br>
+                        <input type="text" for="name" id="name" required>
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                    </div>
+                    <div class="useremail" style="display:none;">
+                        <label for="email">E-mail*</label><br>
+                        <input type="email" for="email" id="email" required>
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                    </div>
+                    <div class="password">
+                        <label for="pwd">Password*</label><br>
+                        <input type="password" id="pwd" name="pwd" required>
+                        <i class="fa fa-eye" aria-hidden="true"></i>
+
+                    </div>
+                    <div class="check">
+                        <div>
+                            <input type="checkbox" id="remember" name="remember" value="remember">
+                            <label for="remember">remember me?</label>
+                        </div>
+                        <div><a href="#" class="forgot">forgot password?</a></div>
+
+
+                    </div>
+                    <div class="submitbutton"><a href="#" class="btn1 login">Login <i class="fa fa-arrow-right"
+                                aria-hidden="true"></i></a>
+                        <a href="#" class="btn2 create">Create <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                    </div>
+                    <div class="social-signup" style="display:none;">
+                        <p>Or create account usina social media!!</p>
+                        <div class="social-icons">
+                            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+                        </div>
+
+                    </div>
+
+                </form>
+
+
+            </div>
+        </div>
+    </section>
+
+    <script>
+        $(document).ready(function () {
+            $(".create").click(function () {
+                $(".useremail").show(300);
+                $(this).removeClass("btn2");
+                $(this).addClass("btn1");
+                $("this i").css("color", "#ffffff");
+                $(".password i").removeClass("fa-eye");
+                $(".password i").addClass("fa-lock");
+                $(".form>i").removeClass("fa-right-to-bracket");
+                $(".form>i").addClass("fa-user-circle");
+                $(".login").removeClass("btn1");
+                $(".login").addClass("btn2");
+                $("h2").text("Create account!");
+                $(".formtext").hide(300);
+                $(".check").hide(300);
+                $(".social-signup").show(300);
+
+
+
+            });
+            $(".login").click(function () {
+                $(".useremail").hide(300);
+                $(this).removeClass("btn2");
+                $(this).addClass("btn1");
+                $(".password i").removeClass("fa-lock");
+                $(".password i").addClass("fa-eye");
+                $(".form>i").removeClass("fa-user-circle");
+                $(".form>i").addClass("fa-right-to-bracket");
+                $(".create").removeClass("btn1");
+                $(".create").addClass("btn2");
+                $("h2").text("Welcome!");
+                $(".formtext").show(300);
+                $(".check").show(300);
+                $(".social-signup").hide(300);
+            });
+        });
+
+
+    </script>
+</body>
+
+</html>
