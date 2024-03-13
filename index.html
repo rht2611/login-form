@@ -53,10 +53,9 @@
 
 
                     </div>
-                    <div class="submitbutton"><a href="#" class="btn1 login">Login <i
-                                class="fa fa-arrow-right" aria-hidden="true"></i></a>
-                        <a href="#" class="btn2 create">Create <i class="fa fa-arrow-right"
+                    <div class="submitbutton"><a href="#" class="btn1 login">Login <i class="fa fa-arrow-right"
                                 aria-hidden="true"></i></a>
+                        <a href="#" class="btn2 create">Create <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
                     </div>
                     <div class="social-signup" style="display:none;">
                         <p>Or create account using social media!!</p>
@@ -122,17 +121,27 @@
             $("input").blur(function () {
                 $(this).next("i").css("color", "#a5a4a7");
             });
-            
+
             $(".fa-eye").hover(function () {
                 $(this).css("cursor", "pointer");
             });
-            $(".fa-eye").mousedown(function () {
-                $("#pwd").attr("type","text");
+            // $(".fa-eye").mousedown(function () {
+            //     $("#pwd").attr("type","text");
+            // });
+            // $(".fa-eye").mouseup(function () {
+            //     $("#pwd").attr("type","password");
+            // });
+
+            $(document).ready(function () {
+                $('.fa-eye').click(function () {
+                    if ($("#pwd").attr("type") === "password") {
+                        $("#pwd").attr("type", "text");
+                    } else {
+                        $("#pwd").attr("type", "password");
+                    }
+                });
             });
-            $(".fa-eye").mouseup(function () {
-                $("#pwd").attr("type","password");
-            });
-            
+
         }); 
     </script>
 </body>
