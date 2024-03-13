@@ -53,13 +53,14 @@
 
 
                     </div>
-                    <div class="submitbutton"><a href="#" class="btn1 login">Login <i class="fa fa-arrow-right"
+                    <div class="submitbutton"><a href="mailto:someone@example.com" class="btn1 login">Login <i
+                                class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                        <a href="mailto:someone@example.com" class="btn2 create">Create <i class="fa fa-arrow-right"
                                 aria-hidden="true"></i></a>
-                        <a href="#" class="btn2 create">Create <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
                     </div>
                     <div class="social-signup" style="display:none;">
-                        <p>Or create account usina social media!!</p>
-                        <div class="social-icons">
+                        <p>Or create account using social media!!</p>
+                        <div>
                             <a href="#"><i class="fa-brands fa-facebook"></i></a>
                             <a href="#"><i class="fa-brands fa-twitter"></i></a>
                             <a href="#"><i class="fa-brands fa-pinterest"></i></a>
@@ -110,9 +111,29 @@
                 $(".check").show(300);
                 $(".social-signup").hide(300);
             });
-        });
 
+            $(".login").submit(function () {
+                alert("Submitted");
+            });
 
+            $("input").focus(function () {
+                $(this).next("i").css("color", "#45CD30");
+            });
+            $("input").blur(function () {
+                $(this).next("i").css("color", "#a5a4a7");
+            });
+            
+            $(".fa-eye").hover(function () {
+                $(this).css("cursor", "pointer");
+            });
+            $(".fa-eye").mousedown(function () {
+                $("#pwd").attr("type","text");
+            });
+            $(".fa-eye").mouseup(function () {
+                $("#pwd").attr("type","password");
+            });
+            
+        }); 
     </script>
 </body>
 

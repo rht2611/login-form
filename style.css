@@ -117,10 +117,11 @@ input {
     border: none;
     font-size: 16px;
     color: #333333;
+    outline: none;
 }
 
 input#name {
-    width: 94%;
+    width: 83%;
     height: 40px;
 
 }
@@ -132,7 +133,7 @@ input#pwd {
 }
 
 input#email {
-    width: 94%;
+    width: 83%;
     height: 40px;
 
 }
@@ -162,9 +163,13 @@ a.btn2 i {
     align-items: center;
     margin-top: 40px;
 }
+input#remember {
+    vertical-align: middle;
+}
 
 .submitbutton {
     margin-top: 40px;
+    margin-bottom: 10px;
 }
 
 .btn1 i {
@@ -207,10 +212,4 @@ a.forgot {
 
 .fa-pinterest {
     color: #DF1D18;
-}
-.social-icons{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
 }
